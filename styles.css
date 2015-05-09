@@ -1,0 +1,29 @@
+@import url(http://fonts.googleapis.com/css?family=Indie+Flower);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+
+#container
+{
+  font-family: "Indie Flower", "sans-serif";
+  width: 40%;
+  padding: 1em;
+  margin: 0 auto;
+  margin-top: 5em;
+  box-shadow: 0 0 15px grey;
+  
+  background: white;
+  border-radius: 5px;
+}
+
+#innerContainer
+{
+  padding: 0 2em 2em 2em;
+  text-align: center;
+}
+
+.Btn
+{
+  font-family: "Oswald";
+  padding: 10px;
+  border: 2px solid lightgrey;
+  border-radius: 5px;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Hangman</title>
+
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+
+<body>
+
+<div id="container">
+ <div id="innerContainer">
+  <h1>Hangman</h1>
+  <div id="keyboard-message" style="display:none;">Please use the keyboard</div>
+    <br>
+  	<div id="divider"></div>
+
+	<div id="messages"></div>
+	<div id="word"></div>
+	<br>
+	<div id="tries"></div>
+	<div id="guessedletters"></div>
+
+	<button id="startgame" class="Btn">Start a new game</button>
+	<button id="giveupbutton" class="Btn" style="display:none;">Give Up</button>
+	<button id="hintbutton" class="Btn" style="display:none;">Hint</button>
+ </div>
+</div>
+
+
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	    <script src="https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+
+</body>
+</html>
