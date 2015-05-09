@@ -9,7 +9,7 @@ var game = {
 		self.tries = 10;
 		$('#tries').text('You have ' + self.tries + ' tries left');
 
-		var words = ["cheese", "tacos", "burrito", "carnitas", "chocolate","rigatoni","souffle","coffee","cappuccino","ravioli","tortellini","eggplant","tomato","cherry","apple","orange","carrot","tiramisu","strawberry"];
+		var words = ["cheese", "tacos", "burrito", "carnitas", "chocolate","rigatoni","souffle","coffee","cappuccino","ravioli","tortellini","eggplant","tomato","cherry","apple","orange","carrot","tiramisu","strawberry","mango","clementine","sushi","noodles","almond","cashew","walnut"];
 		self.answer = words[Math.floor(Math.random() * words.length)];
 
 		var array_of_blanks = [];
