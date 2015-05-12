@@ -2,7 +2,6 @@ var game = {
 
 	Hangman: function (){
 		var self = this;
-		self.hintButton = $("#hintbutton");
 		self.giveUpButton = $("#giveupbutton");
 		self.guessedletters = [];
 		self.inprogress = true;
@@ -88,9 +87,9 @@ var game = {
 			 self.gameReset();
 		}
 
-		self.hintButton.click(function(){
-			self.hint();
-		});
+		// self.hintButton.click(function(){
+		// 	self.hint();
+		// });
 
 		self.hint = function(){
 		$("#hintbutton").attr('disabled', true);
@@ -162,4 +161,6 @@ $(document).ready(function(){
     });
 
 
+
+  $('#hintbutton').on('click', function () { startgame.hint(); });
 });
