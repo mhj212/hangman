@@ -4,7 +4,7 @@ var game = {
 		var self = this;
 		self.giveUpButton = $("#giveupbutton");
 		self.guessedletters = [];
-		self.inprogress = true;
+		self.game_is_happening = true;
 		self.tries = 10;
 		$('#tries').text('You have ' + self.tries + ' tries left');
 
@@ -57,7 +57,7 @@ var game = {
 		
 
 		self.gameOver = function (){
-			self.inprogress = false;
+			self.game_is_happening = false;
 			$('#messages').html('sorry, you are out of tries.<br> The answer was <b>"' + self.answer + '"</b>');
 			self.gameReset();
 		}
@@ -82,14 +82,10 @@ var game = {
 		}
 
 		self.youWin = function (){
-			self.inprogress = false;
+			self.game_is_happening = false;
 			 $('#messages').text('You are a winner!');
 			 self.gameReset();
 		}
-
-		// self.hintButton.click(function(){
-		// 	self.hint();
-		// });
 
 		self.hint = function(){
 		$("#hintbutton").attr('disabled', true);
@@ -113,7 +109,7 @@ var game = {
 		});
 
 		self.giveUp = function(){
-		  self.inprogress = false;
+		  self.game_is_happening = false;
 		  self.tries = 0;
 		  $('#tries').text(self.tries + ' tries left');
 		   $('#messages').html('The answer was <b>"' + self.answer + '"</b>');
@@ -129,6 +125,11 @@ var game = {
 
 $(document).ready(function(){
  var startgame;
+
+ $('#hintbutton').on('click', function () {
+  startgame.hint(); 
+ });
+
 	$("#startgame").click(function(){
 	  
 	  $("#keyboard-message").fadeIn();
@@ -146,21 +147,23 @@ $(document).ready(function(){
 
 
     $(document).on('keyup', function (info) { 
-      if (startgame.inprogress === true) {
-        var input_code = String.fromCharCode(info.which);
-        var guessed_letter = input_code.toLowerCase();
+      if (startgame.game_is_happening === true) {
+        var input = String.fromCharCode(info.which);
+        var guessed_letter = input.toLowerCase();
         $('#messages').text('');
 
-        console.log(guessed_letter);
+
         if ( guessed_letter.match(/[a-z]/) ) {
           startgame.guess(guessed_letter); 
-        }else{
-          $('#messages').text('That character is invalid, please enter a letter!');
+        }
+        else
+        {
+        $('#messages').text('That character is invalid, please enter a letter!');
         }
       }
     });
 
 
 
-  $('#hintbutton').on('click', function () { startgame.hint(); });
+  
 });
